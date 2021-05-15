@@ -6,14 +6,13 @@
 <body>
 <nav id="top" class="navbar navbar-expand-md navbar-light bg-light d-flex fixed-top">
   <a class="navbar-brand pl-3" style = "margin-left:8px;" href="#">
-    <h1 class="h3 font-weight-bold"><%= image_tag ("logo.png") %></h1></a>
+  <h1 class="h3 font-weight-bold"><%= image_tag ("logo.png") %></h1></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon">
-      <i id="icon" class="h3 fas fa-bars"></i>
-    </span>
-
-  </button>
-  <style>
+  <span class="navbar-toggler-icon">
+    <i id="icon" class="h3 fas fa-bars"></i>
+  </span>
+</button>
+<style>
   a{
       text-decoration:none;
       color:grey;
@@ -22,53 +21,53 @@
   a:Hover{
     color:#8364B4;
     background-color:transparent;
-      
-
   }
-  </style>
-  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-    <ul class="navbar-nav">
-      <% if admin_signed_in? && current_admin.admin %>
-        <li class="nav-item h5 font-weight-normal px-3">
-          <%= link_to 'Students', home_index_students_path,class:"nav-link"  %>
-        </li>
-      <% else %>
-        <li class="nav-item h5 font-weight-normal px-3">
-          <%= link_to 'About Us', home_about_path,class:"nav-link"  %>
-        </li>
-      <% end %>
+</style>
+<div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+  <ul class="navbar-nav">
+    <% if admin_signed_in? && current_admin.admin %>
       <li class="nav-item h5 font-weight-normal px-3">
-        <%= link_to 'Courses', main_courses_path,class:"nav-link"  %>
+        <%= link_to 'Students', home_index_students_path,class:"nav-link"  %>
+      </li>
+    <% else %>
+      <li class="nav-item h5 font-weight-normal px-3">
+        <%= link_to 'About Us', home_about_path,class:"nav-link"  %>
+      </li>
+    <% end %>
+      <li class="nav-item h5 font-weight-normal px-3">
+       <%= link_to 'Courses', main_courses_path,class:"nav-link"  %>
       </li>
       <% if admin_signed_in? %>
-      <li class="nav-item h5 font-weight-normal px-3">
+       <li class="nav-item h5 font-weight-normal px-3">
         <%= link_to 'My Courses', root_path,class:"nav-link"  %>
-      </li>
-      <li class="nav-item h5 font-weight-normal px-3">
-      <%= link_to "Sign Out", destroy_admin_session_path,method: :delete, class: "nav-link" %>
-      </li>
-      <% else %>
-      <li class="nav-item h5 font-weight-normal px-3">
-       <%= link_to 'Log in', new_admin_session_path,class:"nav-link" %>
        </li>
        <li class="nav-item h5 font-weight-normal px-3">
-       <%= link_to 'Sign Up', new_admin_registration_path,class:"nav-link" %>
+        <%= link_to "Sign Out", destroy_admin_session_path,method: :delete, class: "nav-link" %>
+       </li>
+       <li class="nav-item h5 font-weight-normal px-3">
+        <%= link_to 'Edit My Profile', edit_admin_registration_path,class:"nav-link"  %>
+       </li>
+      <% else %>
+       <li class="nav-item h5 font-weight-normal px-3">
+        <%= link_to 'Log in', new_admin_session_path,class:"nav-link" %>
+       </li>
+       <li class="nav-item h5 font-weight-normal px-3">
+        <%= link_to 'Sign Up', new_admin_registration_path,class:"nav-link" %>
        </li>
       <% end %>
     </ul>
-  </div>
+</div>
   
-
-  <div class="social h4 pr-3">
-    <a href="https://www.linkedin.com/company/devsnest/?originalSubdomain=in" class="px-2">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://www.instagram.com/devsnest.in/" class="px-2">
-      <i class="fab fa-instagram"></i>
-      </a>
-    <a href="https://www.facebook.com/devsnest/" class="px-2">
-      <i class="fab fa-facebook"></i>
-    </a>
+<div class="social h4 pr-3">
+  <a href="https://www.linkedin.com/company/devsnest/?originalSubdomain=in" class="px-2">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://www.instagram.com/devsnest.in/" class="px-2">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.facebook.com/devsnest/" class="px-2">
+    <i class="fab fa-facebook"></i>
+  </a>
   </div>
 </nav>
 </body>
