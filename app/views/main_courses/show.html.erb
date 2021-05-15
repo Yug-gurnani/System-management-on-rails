@@ -1,0 +1,54 @@
+<main>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class = "container">
+<div class="card">
+  <div class="card-header">
+    <h1>New Course</h1>
+  </div>
+  <div class="card-body">
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Course name:</strong>
+  <%= @main_course.course_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @main_course.description %>
+</p>
+
+<p>
+  <strong>Course videos:</strong>
+  <%= @main_course.course_videos %>
+</p>
+
+<p>
+  <strong>Seats Available:</strong>
+  <%= @main_course.seats %>
+</p>
+<% if admin_signed_in? && current_admin.admin %>
+<p>
+  <strong>Students:</strong>
+
+<% @user.each do |user| %>
+    
+        <% if Subscription.where(user_id: user.id ,course_id: @main_course.id).exists? %>
+        <li>
+          <%= user.email  %>
+          </li>
+        <% end %>
+    
+<% end %>
+
+</p>
+<% end %>
+<% if admin_signed_in? && current_admin.admin %>
+<%= link_to 'Edit', edit_main_course_path(@main_course) %> |
+<%= link_to 'Back', main_courses_path %>
+
+<% end %>
+</div>
+</main>

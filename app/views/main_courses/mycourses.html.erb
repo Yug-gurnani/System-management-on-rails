@@ -1,0 +1,47 @@
+<main>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class = "container">
+
+<div class="card">
+  <div class="card-header">
+    <h1>Courses</h1>
+    <p id="notice"><%= notice %></p>
+  </div>
+  <div class="card-body">
+<div class = "row">
+<% @main_courses.each do |main_course| %>
+
+  <div class = "col-sm-4">
+    <div class="card" style="width: 18rem;">
+      <img  src="http://www.simpleimageresizer.com/_uploads/photos/8584bc4e/logo.f1b45387_80x80.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= main_course.course_name %></h5>
+        <% if admin_signed_in? and current_admin.admin %>
+        <p class="card-text"><%= link_to 'Show', main_course %> | <%= link_to 'Edit', edit_main_course_path(main_course) %> | <%= link_to 'Destroy', main_course, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <% else %>
+        <p class="card-text"><%= link_to 'Show', main_course %></p>
+        <% end %>
+       <%= link_to 'Enroll', main_courses_enroll_path(:c => main_course.id),class:"btn btn-outline-primary",method: :post  %>
+        <%= link_to 'De-enroll', main_courses_deenroll_path(:c => main_course.id),class:"btn btn-outline-danger",method: :post  %>
+
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+</div>
+<br/>
+<% if admin_signed_in? && current_admin.admin %>
+<%= link_to 'Add Course', new_main_course_path,class: "btn btn-light" %>
+<% end %>
+ </div>
+</div>
+
+<br/>
+
+</div>
+</main>

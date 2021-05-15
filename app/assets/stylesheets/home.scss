@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Lora:wght@400;600;700&display=swap');
+
+* {
+  font-family: 'PT Sans', sans-serif;
+  color: #444;
+}
+
+body {
+  height: 100vh;
+}
+
+main {
+  height: 100vh;
+  background-color: #6f42c1;
+}
+
+h1 {
+  font-family: 'Lora', serif;
+}
+
+button, button:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+.active {
+  font-weight: bold !important;
+  text-decoration: underline;
+}
+
+.social a {
+  color: #444 !important;
+}
+
+a:hover, a:focus {
+  color:  #6f42c1 !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+.navbar-toggler-icon {
+  background-image: none !important;
+  color: #444;
+}
+
+#back-up i {
+  display: block !important;
+  position: absolute !important;
+  bottom: 2rem !important;
+  right: 2rem !important;
+  z-index: 1000 !important;
+  color: white !important;
+  border-radius: 50%;
+  border: 3px solid #000;
+  background-color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .social {
+    flex-direction: column;
+    width: 100vw;
+    text-align: center;
+  }
+  
+  .navbar-nav {
+    margin: 3rem auto;
+    text-align: center;
+  }
+}
+
+

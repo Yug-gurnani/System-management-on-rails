@@ -1,0 +1,36 @@
+<main>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class = "container">
+
+<div class="card">
+  <div class="card-header">
+<table class="table table-bordered table-stripeds table-hover">
+
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if current_admin.admin %>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.email %></td>
+          
+          <td><%= user.created_at %></td>
+        </tr>
+      <% end %>
+      <% end %>
+    </tbody>
+  </table>
+ </div>
+</div>
+</div>
+</main>
